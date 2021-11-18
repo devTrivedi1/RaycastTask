@@ -22,8 +22,12 @@ public class ObjectSelection : MonoBehaviour
 		if (Input.GetMouseButtonUp(0))
 		{
 			SelectObject();
-			theObject.enabled = false;
-			theObject = null;
+			if (theObject != null)
+			{
+				theObject.enabled = false;
+
+				theObject = null;
+			}
 		}
 	}
 

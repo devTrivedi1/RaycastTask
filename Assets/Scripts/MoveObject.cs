@@ -20,6 +20,10 @@ public class MoveObject : MonoBehaviour
 		{
 			Move();
 		}
+		if(Input.GetMouseButtonUp(0))
+		{
+			this.enabled = false;
+		}
 	}
 
 	void Move()
@@ -30,6 +34,7 @@ public class MoveObject : MonoBehaviour
 		if (Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
 		{
 			this.transform.position = hit.point;
+			
 		}
 	}
 }
