@@ -39,7 +39,7 @@ public class ObjectSelection : MonoBehaviour
 		if (Physics.Raycast(ray, out hit))
 		{
 			GameObject obj = hit.transform.gameObject;
-			var objectMover = obj.GetComponent<MoveObject>();
+			var objectMover = obj.GetComponentInParent<MoveObject>();
 			if (objectMover != null)
 			{
 				theObject = objectMover;

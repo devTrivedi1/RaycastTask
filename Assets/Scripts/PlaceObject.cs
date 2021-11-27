@@ -34,13 +34,14 @@ public class PlaceObject : MonoBehaviour
 			if (hit.transform.tag == groundLayerName)
 			{
 				CreateObjects();
+				this.gameObject.SetActive(false);
 			}
 		}
 	}
 
 	void CreateObjects()
 	{
-		Instantiate(objectToPlace);
-		objectToPlace.AddComponent<MoveObject>();
+		GameObject create = Instantiate(objectToPlace);
+		create.AddComponent<MoveObject>();
 	}
 }
